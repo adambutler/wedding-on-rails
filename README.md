@@ -1,13 +1,13 @@
 # Wedding on Rails
 
-> Please note Wedding-on-rails is currently in active development.
+> :bomb: Please note Wedding-on-rails is currently in early active development, `master` branch may not be in a usable state.
 
 Wedding on Rails in a Ruby on Rails application that I am using for my own
 wedding.
 
 ## Features
 
-> Coming Soon
+> None... development starting Soon
 
 ## Roadmap
 
