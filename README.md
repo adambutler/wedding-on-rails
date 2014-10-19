@@ -7,7 +7,7 @@ wedding.
 
 ## Features
 
-> None... development starting Soon
+> None... development starting soon
 
 ## Roadmap
 
