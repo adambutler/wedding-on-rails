@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rsvp: false
+  invited_to_ceremony: false
+  invited_to_evening: false
+  vegetarian: false
+  group_size: 1
+  arrival_transportation_required: false
+  departing_transport_requred: false
+
+two:
+  name: MyString
+  rsvp: false
+  invited_to_ceremony: false
+  invited_to_evening: false
+  vegetarian: false
+  group_size: 1
+  arrival_transportation_required: false
+  departing_transport_requred: false
