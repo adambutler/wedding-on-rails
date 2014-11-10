@@ -5,10 +5,14 @@
   <small><%= "Guests".pluralize(@guests.count) %></small>
 </div>
 
-<h2>Guests</h2>
+<% if @guests.empty? %>
+  <p class="alert">You havn't added any guests yet. Why not <%= link_to "add some now", new_guest_path %>?</p>
+<% else %>
+  <h2>Guests</h2>
 
-<ul>
-  <% @guests.each do |guest| %>
-    <li><%= guest %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @guests.each do |guest| %>
+      <li><%= guest %></li>
+    <% end %>
+  </ul>
+<% end %>
