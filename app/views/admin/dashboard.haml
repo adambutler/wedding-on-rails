@@ -1,0 +1,22 @@
+%h1 Admin
+%ul.small-block-grid-3
+  %li
+    .panel.text-center
+      %h2= @guests.count
+      %p= "Guests".pluralize(@guests.count)
+  %li
+    .panel.text-center
+      %h2= @guests.count
+      %p= "Guests".pluralize(@guests.count)
+  %li
+    .panel.text-center
+      %h2= @guests.count
+      %p= "Guests".pluralize(@guests.count)
+- if @guests.empty?
+  %p.alert
+    You havn't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
+- else
+  %h2 Guests
+  %ul
+    - @guests.each do |guest|
+      %li= guest
