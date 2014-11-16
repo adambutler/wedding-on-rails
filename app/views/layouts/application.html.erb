@@ -12,8 +12,11 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    <div class="row">
+      <div class="column small-12">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
