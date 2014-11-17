@@ -4,7 +4,7 @@
   = f.input :invited_to_ceremony
   = f.input :invited_to_evening
   = f.input :vegetarian
-  = f.input :group_size
   = f.input :arrival_transportation_required
   = f.input :departing_transport_requred
+  = f.association :group, label_method: :title
   = f.button :submit
