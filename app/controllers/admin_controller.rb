@@ -2,7 +2,7 @@ class AdminController < ApplicationController
   before_filter :authenticate
 
   def dashboard
-    @guests = Guests.all
+    @guests = Guest.all
   end
 
   private
