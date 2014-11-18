@@ -1,22 +1,39 @@
 %h1 Admin
-%ul.small-block-grid-3
+%ul.small-block-grid-4
   %li
     .panel.text-center
       %h2= @guests.count
       %p= "Guests".pluralize(@guests.count)
   %li
     .panel.text-center
-      %h2= @guests.count
-      %p= "Guests".pluralize(@guests.count)
+      %h2= @groups.count
+      %p= "Groups".pluralize(@groups.count)
   %li
     .panel.text-center
-      %h2= @guests.count
-      %p= "Guests".pluralize(@guests.count)
+      %h2= "£12,345"
+      %p= "Estimated Cost"
+  %li
+    .panel.text-center
+      %h2= "123"
+      %p= "Days to go"
 - if @guests.empty?
   %p.alert
     You havn't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
 - else
+
   %h2 Guests
-  %ul
-    - @guests.each do |guest|
-      %li= guest
+
+  %table
+    %thead
+      %tr
+        %th Guests
+        %th RSVP'd
+        %th Actions
+    %tbody
+      - @groups.each do |group|
+        %tr
+          %td= group.title
+          %td= group.rsvp
+          %td
+            = link_to "edit", edit_group_path(group)
+            = link_to "delete", group_path(group), data: { confirm: "Are you sure you want to delete this group of guests?" }, method: :delete

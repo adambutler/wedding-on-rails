@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 
   def dashboard
     @guests = Guest.all
+    @groups = Group.all
   end
 
   private
