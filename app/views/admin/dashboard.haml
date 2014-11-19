@@ -14,12 +14,14 @@
       %p= "Estimated Cost"
   %li
     .panel.text-center
-      %h2= "123"
-      %p= "Days to go"
+      %h2= @event.days_to_go
+      %p= "#{"Days".pluralize(@event.days_to_go)} to go"
 - if @guests.empty?
   %p.alert
     You havn't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
 - else
+
+  = render partial: "events/form"
 
   %h2 Guests
 
@@ -35,5 +37,5 @@
           %td= group.title
           %td= group.rsvp
           %td
-            = link_to "edit", edit_group_path(group)
-            = link_to "delete", group_path(group), data: { confirm: "Are you sure you want to delete this group of guests?" }, method: :delete
+            = link_to "edit", edit_event_group_path(@event, group)
+            = link_to "delete", event_group_path(@event, group), data: { confirm: "Are you sure you want to delete this group of guests?" }, method: :delete

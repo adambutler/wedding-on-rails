@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+adam_and_cerys:
+  time: 2015-06-23 17:20:00
+  location: Mansion House, Clifton, Bristol, UK
+  active: true
+  title: Adam & Cerys

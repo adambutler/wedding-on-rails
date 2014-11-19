@@ -48,3 +48,4 @@ end
 gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
+gem "sorcery"

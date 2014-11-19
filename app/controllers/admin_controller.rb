@@ -2,6 +2,7 @@ class AdminController < ApplicationController
   before_filter :authenticate
 
   def dashboard
+    @event = Event.first
     @guests = Guest.all
     @groups = Group.all
   end

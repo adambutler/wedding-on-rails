@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get "admin" => "admin#dashboard"
-  resources :guests
-  resources :groups
+  resources :events, path: '' do
+    get "admin" => "admin#dashboard"
+    resources :guests
+    resources :groups
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
