@@ -49,3 +49,5 @@ gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
 gem "sorcery"
+
+gem 'rails-assets-datetimepicker'
