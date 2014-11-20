@@ -1,6 +1,5 @@
 = simple_form_for @event do |f|
   = f.input :title
   = f.input :location
-  = f.input :time
-  = f.input :active
+  = f.input :date, as: :string, input_html: { class: "js-datetimepicker" }
   = f.button :submit

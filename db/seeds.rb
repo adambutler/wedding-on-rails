@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 event = Event.create({
-  time: Time.parse("2015-06-13 00:00:00"),
+  date: Time.parse("2015-06-13"),
   location: "Mansion House, Clifton, Bristol, UK",
   active: true,
   title: "Adam & Cerys"
