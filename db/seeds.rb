@@ -13,15 +13,21 @@ event = Event.create({
   title: "Adam & Cerys"
 })
 
-butlers = Group.create
-owens = Group.create
+butlers = Group.create({
+  event_id: event.id
+})
+
+owens = Group.create({
+  event_id: event.id
+})
 
 ian = Guest.create({
   name: "Ian Butler",
   rsvp: true,
   invited_to_ceremony: true,
   invited_to_evening: true,
-  group_id: butlers.id
+  group_id: butlers.id,
+  event_id: event.id
 })
 
 mary = Guest.create({
@@ -29,7 +35,8 @@ mary = Guest.create({
   rsvp: true,
   invited_to_ceremony: true,
   invited_to_evening: true,
-  group_id: butlers.id
+  group_id: butlers.id,
+  event_id: event.id
 })
 
 bryan = Guest.create({
@@ -37,7 +44,8 @@ bryan = Guest.create({
   rsvp: true,
   invited_to_ceremony: true,
   invited_to_evening: true,
-  group_id: owens.id
+  group_id: owens.id,
+  event_id: event.id
 })
 
 joyce = Guest.create({
@@ -45,5 +53,6 @@ joyce = Guest.create({
   rsvp: true,
   invited_to_ceremony: true,
   invited_to_evening: true,
-  group_id: owens.id
+  group_id: owens.id,
+  event_id: event.id
 })

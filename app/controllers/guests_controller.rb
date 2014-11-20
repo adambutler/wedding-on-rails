@@ -3,6 +3,9 @@ class GuestsController < ApplicationController
   before_filter :set_event, only: [:show, :new, :edit]
   before_filter :set_guest, only: [:show, :update, :edit]
 
+  def show
+  end
+
   def new
     @guest = Guest.new
   end
@@ -37,6 +40,6 @@ class GuestsController < ApplicationController
   end
 
   def set_guest
-    @guest = Guest.find params[:id]
+    @guest = @event.guests.find params[:id]
   end
 end

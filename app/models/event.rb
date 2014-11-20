@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  has_many :groups
+  has_many :guests
 
   def days_to_go
     (time - Time.zone.now).to_i / 1.day

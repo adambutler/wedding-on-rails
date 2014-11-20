@@ -23,7 +23,13 @@
 
   = render partial: "events/form"
 
-  %h2 Guests
+  .row
+    .columns.small-6
+      %h2 Guests
+    .columns.small-6
+      = link_to "New", new_event_guest_path, class: "button right"
+
+  %hr
 
   %table
     %thead

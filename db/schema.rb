@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119172000) do
+ActiveRecord::Schema.define(version: 20141120123400) do
 
   create_table "events", force: true do |t|
     t.datetime "time"
     t.string   "location"
-    t.boolean  "active", default: true
+    t.boolean  "active",     default: true
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141119172000) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "rsvp",       default: false
+    t.integer  "event_id"
   end
 
   create_table "guests", force: true do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141119172000) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "group_id"
+    t.integer  "event_id"
   end
 
 end
