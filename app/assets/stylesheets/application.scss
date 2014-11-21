@@ -11,8 +11,13 @@
  * file per style scope.
  *
  *= require datetimepicker
- *= require_tree .
  *= require_self
  */
 
 @import "foundation_and_overrides";
+
+@import "core/variables";
+
+.theme--popcorn {
+  @import "themes/popcorn/popcorn";
+}

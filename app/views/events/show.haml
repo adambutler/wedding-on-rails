@@ -1,2 +1,6 @@
-%h1= @event.title
-%h2= @event.formatted_time
+.row
+  .column.small-12
+    %h1= @event.title
+    %h2= @event.formatted_time
+
+#location.inverted{ :style => "background-image: url('/assets/tmp/venue.jpg');" }

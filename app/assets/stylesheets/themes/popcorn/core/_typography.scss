@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "learning_curve_proregular";
+  src: asset-url("learningcurve_ot-webfont.eot");
+  src: asset-url("learningcurve_ot-webfont.eot?#iefix") format("embedded-opentype"),
+       asset-url("learningcurve_ot-webfont.woff2") format("woff2"),
+       asset-url("learningcurve_ot-webfont.woff") format("woff"),
+       asset-url("learningcurve_ot-webfont.ttf") format("truetype"),
+       asset-url("learningcurve_ot-webfont.svg#learning_curve_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "learning_curve_proregular", sans-serif;
+}

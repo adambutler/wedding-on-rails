@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme--popcorn" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="row">
+      <div class="column small-12">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
