@@ -7,10 +7,21 @@
         = @event.partner_two
 .row
   .column.small-12
-    %h3 Get married on
-    %h2= @event.formatted_time
+    %h5 Get married on
+    %h3= @event.formatted_time
 
 #location.inverted.paralax{ :style => "background-image: url('/assets/tmp/venue.jpg');" }
   .row
     .column.small-12
-      %h2= @event.venue_name
+      %br
+      %br
+      %br
+
+      %h2= "at the beautiful #{@event.venue_name}"
+      %h4= "in #{@event.venue_address_city}"
+
+      %br
+      %br
+      %br
+
+      = link_to "RSVP now", "#", class: "button large"
