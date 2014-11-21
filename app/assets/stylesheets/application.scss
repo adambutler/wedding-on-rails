@@ -18,6 +18,55 @@
 
 @import "core/variables";
 
+@font-face {
+  font-family: "learning_curve_proregular";
+  src: asset-url("learningcurve_ot-webfont.eot");
+  src: asset-url("learningcurve_ot-webfont.eot?#iefix") format("embedded-opentype"),
+       asset-url("learningcurve_ot-webfont.woff2") format("woff2"),
+       asset-url("learningcurve_ot-webfont.woff") format("woff"),
+       asset-url("learningcurve_ot-webfont.ttf") format("truetype"),
+       asset-url("learningcurve_ot-webfont.svg#learning_curve_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: asset-url('BebasNeue-webfont.eot');
+  src: asset-url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+       asset-url('BebasNeue-webfont.woff') format('woff'),
+       asset-url('BebasNeue-webfont.ttf') format('truetype'),
+       asset-url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pacificoregular';
+  src: asset-url('pacifico-webfont.eot');
+  src: asset-url('pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+       asset-url('pacifico-webfont.woff2') format('woff2'),
+       asset-url('pacifico-webfont.woff') format('woff'),
+       asset-url('pacifico-webfont.ttf') format('truetype'),
+       asset-url('pacifico-webfont.svg#pacificoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#location {
+  position: relative;
+  background-size: cover;
+  background-position: center top;
+  height: 600px;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
 .theme--popcorn {
   @import "themes/popcorn/popcorn";
 }

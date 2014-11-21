@@ -1,6 +1,16 @@
+.box.box--mint
+  .row
+    .column.small-12
+      %h1
+        = @event.partner_one
+        %span.font--pacifico &
+        = @event.partner_two
 .row
   .column.small-12
-    %h1= @event.title
+    %h3 Get married on
     %h2= @event.formatted_time
 
-#location.inverted{ :style => "background-image: url('/assets/tmp/venue.jpg');" }
+#location.inverted.paralax{ :style => "background-image: url('/assets/tmp/venue.jpg');" }
+  .row
+    .column.small-12
+      %h2= @event.venue_name

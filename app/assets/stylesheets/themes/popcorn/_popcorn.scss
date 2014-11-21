@@ -2,3 +2,10 @@
 @import "core/typography";
 
 @import "layout/core";
+
+.box--mint {
+  background: $mint;
+  h1 {
+    text-shadow: 3px 3px 0 $salmon;
+  }
+}
