@@ -10,7 +10,15 @@ event = Event.create({
   date: Time.parse("2015-06-13"),
   location: "Mansion House, Clifton, Bristol, UK",
   active: true,
-  title: "Adam & Cerys"
+  title: "Adam & Cerys",
+  partner_one: "Adam",
+  partner_two: "Cerys",
+  venue_name: "Mansion House",
+  venue_address_line_one: "Clifton down",
+  venue_address_city: "Bristol",
+  venue_address_state: "Bristol",
+  venue_address_zip: "BS8 3LJ",
+  venue_address_country: "United Kingdom"
 })
 
 butlers = Group.create({
