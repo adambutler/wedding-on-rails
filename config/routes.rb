@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :events, path: '' do
     get "admin" => "admin#dashboard"
     resources :guests
-    resources :groups
+    resources :groups do
+      put 'rsvp', on: :collection
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

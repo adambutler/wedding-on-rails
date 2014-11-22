@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+source "https://rails-assets.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.1.6"
@@ -50,4 +50,5 @@ gem "haml-rails"
 gem "simple_form"
 gem "sorcery"
 
-gem 'rails-assets-datetimepicker'
+gem "rails-assets-datetimepicker"
+gem "rails-assets-select2"

@@ -25,3 +25,20 @@
       %br
 
       = link_to "RSVP now", "#", class: "button large"
+
+%br
+
+.row
+  .column.small-3
+    = image_tag "//placehold.it/800x600&text=1"
+    = image_tag "//placehold.it/800x600&text=2"
+    = image_tag "//placehold.it/800x600&text=3"
+
+  .column.small-7.small-offset-1.end
+    %h5 RSVP
+    = simple_form_for rsvp_event_groups_path(@event) do |f|
+      %h4 Step one - enter your name
+      = f.input :guest, collection: @groups, as: :select
+      = f.input :rsvp
+      = f.button :submit
+

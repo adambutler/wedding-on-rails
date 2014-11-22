@@ -35,3 +35,10 @@ h5 {
   top: 20px;
   line-height: 0;
 }
+
+label {
+  font-family: "bebas_neueregular", sans-serif;
+  font-size: 2em;
+  color: $white;
+  [title="required"] { display: none; }
+}

@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
 
   before_filter :set_event, only: [:show, :update]
+  before_filter :set_groups, only: [:show]
 
   def show
+    @group = Group.new
   end
 
   def update
@@ -20,4 +22,7 @@ class EventsController < ApplicationController
     params.require(:event).permit(:date, :location, :active, :title)
   end
 
+  def set_groups
+    @groups = @event.groups
+  end
 end
