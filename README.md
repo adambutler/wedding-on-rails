@@ -27,3 +27,5 @@ $ rake db:migrate
 
 Contributions are welcome, please follow
 [GitHub Flow](https://guides.github.com/introduction/flow/index.html)
+
+Copyright 2014 Adam Butler
