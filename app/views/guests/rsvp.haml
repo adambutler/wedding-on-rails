@@ -1,0 +1,11 @@
+= simple_form_for [@event, @guest] do |f|
+  .row.text--left
+    .column.small-12.medium-6
+      %h6= @guest.name
+    .column.small-12.medium-6
+      %br
+      = f.input :rsvp, label_html: { class: "cb-checkbox" }
+      %br
+      = f.input :vegetarian, label_html: { class: "cb-checkbox" }
+      = f.button :submit, class: "button button--light"
+%hr

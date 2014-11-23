@@ -27,6 +27,11 @@ h5 {
   font-size: 4em;
 }
 
+h6 {
+  font-family: "bebas_neueregular", sans-serif;
+  font-size: 3em;
+}
+
 .font--pacifico {
   position: relative;
   font-family: "pacificoregular", sans-serif;
@@ -41,4 +46,8 @@ label {
   font-size: 2em;
   color: $white;
   [title="required"] { display: none; }
+}
+
+.text--left {
+  text-align: left;
 }

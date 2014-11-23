@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :events, path: '' do
     get "admin" => "admin#dashboard"
-    resources :guests
+    resources :guests do
+      get 'rsvp'
+    end
     resources :groups do
       put 'rsvp', on: :collection
     end

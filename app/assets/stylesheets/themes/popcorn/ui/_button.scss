@@ -2,3 +2,8 @@
   border-radius: 100px;
   background-color: $salmon;
 }
+
+.button--light {
+  background: $mint;
+  color: mix($mint, #333);
+}

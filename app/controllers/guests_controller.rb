@@ -1,7 +1,12 @@
 class GuestsController < ApplicationController
 
-  before_filter :set_event, only: [:show, :new, :edit]
-  before_filter :set_guest, only: [:show, :update, :edit]
+  before_filter :set_event, only: [:index, :show, :new, :edit, :rsvp]
+  before_filter :set_guest, only: [:show, :update, :edit, :rsvp]
+  before_filter :set_guests, only: [:index]
+
+  def index
+    render json: @guests
+  end
 
   def show
   end
@@ -29,6 +34,10 @@ class GuestsController < ApplicationController
     @guest.group_id = @group.id
   end
 
+  def rsvp
+    render "rsvp", layout: false if params[:raw]
+  end
+
   private
 
   def guest_params
@@ -40,6 +49,11 @@ class GuestsController < ApplicationController
   end
 
   def set_guest
-    @guest = @event.guests.find params[:id]
+    guest_id = params[:guest_id] || params[:id]
+    @guest = @event.guests.find guest_id
+  end
+
+  def set_guests
+    @guests = @event.guests.all
   end
 end
