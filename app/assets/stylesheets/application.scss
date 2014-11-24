@@ -76,6 +76,11 @@
     padding: 5px;
   }
 }
+
+.cb-checkbox .cb-inner {
+  margin-right: $spacing-half;
+}
+
 .theme--popcorn {
   @import "themes/popcorn/popcorn";
 }
