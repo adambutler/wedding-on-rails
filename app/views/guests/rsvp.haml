@@ -1,11 +1,13 @@
-= simple_form_for [@event, @guest] do |f|
-  .row.text--left
-    .column.small-12.medium-6
-      %h6= @guest.name
-    .column.small-12.medium-6
+.column.small-12.medium-6
+  = simple_form_for [@event, @guest], remote: true do |f|
+    .card
+      .row
+        %h3= @guest.name
+        .column.small-12.medium-6
+          = f.input :rsvp, label_html: { class: "cb-checkbox" }
+        .column.small-12.medium-6
+          = f.input :vegetarian, label_html: { class: "cb-checkbox" }
       %br
-      = f.input :rsvp, label_html: { class: "cb-checkbox" }
-      %br
-      = f.input :vegetarian, label_html: { class: "cb-checkbox" }
-      = f.button :submit, class: "button button--light"
-%hr
+      .row
+        .column.small-12
+          = f.button :submit, class: "button", value: "Save changes to #{@guest.name}"
