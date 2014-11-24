@@ -1,0 +1,10 @@
+.card {
+  background: $white;
+  color: $salmon;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
+  h1, h2, h3, h4, h5, h6, label {
+    color: $salmon;
+  }
+}
