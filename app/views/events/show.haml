@@ -29,18 +29,27 @@
 %br
 
 .row
-  .column.small-3
-    = image_tag "//placehold.it/800x600&text=1"
-    = image_tag "//placehold.it/800x600&text=2"
-    = image_tag "//placehold.it/800x600&text=3"
-
-  .column.small-7.small-offset-1.end
+  .column.small-12
     %h5 RSVP
     = simple_form_for rsvp_event_groups_path(@event) do |f|
       %h3 Step one - enter your name
-      = f.input :guest, collection: @groups, as: :select
+      .row
+        .column.small-12.column.medium-6.medium-offset-3
+          = f.input :guest, collection: @groups, as: :select
+      %br
 
-    #test
+    .row#test
+
+.box.box--mint
+  .row
+    .column.small-12
+      %h5 Venue
+
+  %ul.small-block-grid-3
+    %li= image_tag "tmp/1.jpg"
+    %li= image_tag "tmp/2.jpg"
+    %li= image_tag "tmp/3.jpg"
+
   .row
     .column.small-12
       #venue-copy
