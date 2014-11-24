@@ -11,3 +11,12 @@
     text-shadow: 3px 3px 0 $salmon;
   }
 }
+
+.cb-checkbox.checked .cb-inner {
+  background-color: $salmon;
+  border-color: darken($salmon, 5%);
+}
+
+.cb-checkbox:hover .cb-inner {
+  border-color: $gray;
+}
