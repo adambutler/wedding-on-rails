@@ -1,6 +1,12 @@
 .button {
+  -webkit-appearance: none;
+  outline: none;
   border-radius: 100px;
   background-color: $salmon;
+
+  &:hover {
+    background-color: darken($salmon, 5%);
+  }
 }
 
 .button--light {
