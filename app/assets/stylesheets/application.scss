@@ -69,6 +69,13 @@
   }
 }
 
+.select2-container .select2-choice {
+  height: 40px;
+  .select2-arrow {
+    width: 30px;
+    padding: 5px;
+  }
+}
 .theme--popcorn {
   @import "themes/popcorn/popcorn";
 }
