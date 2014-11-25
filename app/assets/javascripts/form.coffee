@@ -10,7 +10,7 @@ class Rsvp
         success: (data) ->
           $(data)
             .checkBo()
-            .appendTo "#test"
+            .appendTo "#rsvp-form"
 
   getGuests: ->
     console.log "/#{@event}/groups/#{@group}"
@@ -37,6 +37,5 @@ $ ->
       width: "element"
       minimumInputLength: 3
     .on "change", (e) ->
+      $("#rsvp-form").html("")
       rsvp.setGroup e.val
-
-  rsvp.setGroup 1
