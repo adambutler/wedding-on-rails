@@ -49,6 +49,8 @@ gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
 gem "sorcery"
+gem "carrierwave"
 
 gem "rails-assets-datetimepicker"
 gem "rails-assets-select2"
+gem "rails-assets-blueimp-file-upload"
