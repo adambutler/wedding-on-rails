@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     p_attr = params[:photo]
     p_attr[:file] = params[:photo][:file].first if params[:photo][:file].class == Array
 
-    @photo = Photos.new(p_attr)
+    @photo = Photo.new(p_attr)
     if @photo.save
       respond_to do |format|
         format.html {
