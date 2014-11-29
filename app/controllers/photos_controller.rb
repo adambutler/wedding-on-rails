@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    p_attr = params[:photo]
+    p_attr = photo_params()
     p_attr[:file] = params[:photo][:file].first if params[:photo][:file].class == Array
 
     @photo = Photo.new(p_attr)
@@ -30,5 +30,11 @@ class PhotosController < ApplicationController
     @photo = Photos.find(params[:id])
     @photo.destroy
     render :json => true
+  end
+
+  private
+
+  def photo_params
+    params.require(:photo).permit(:file)
   end
 end
