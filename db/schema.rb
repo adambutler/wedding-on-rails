@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128091203) do
+ActiveRecord::Schema.define(version: 20141129145434) do
 
   create_table "events", force: true do |t|
     t.date     "date"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141128091203) do
   end
 
   create_table "photos", force: true do |t|
+    t.string "file"
   end
 
 end
