@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :photos
 
   resources :events, path: '' do
     get "admin" => "admin#dashboard"
+    resources :photos
     resources :guests do
       get 'rsvp'
     end
