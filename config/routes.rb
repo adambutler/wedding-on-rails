@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :photos
+
   resources :events, path: '' do
     get "admin" => "admin#dashboard"
     resources :guests do

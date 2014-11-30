@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129145434) do
+ActiveRecord::Schema.define(version: 20141130154645) do
 
   create_table "events", force: true do |t|
-    t.date     "date"
+    t.datetime "date"
     t.string   "location"
-    t.boolean  "active",                 default: true
+    t.boolean  "active"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,7 +54,9 @@ ActiveRecord::Schema.define(version: 20141129145434) do
   end
 
   create_table "photos", force: true do |t|
-    t.string "file"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
