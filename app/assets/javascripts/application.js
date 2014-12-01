@@ -17,6 +17,7 @@
 //= require datetimepicker
 //= require select2
 //= require checkBo
+//= require Justified-Gallery
 //= require blueimp-file-upload/vendor/jquery.ui.widget
 //= require blueimp-file-upload/jquery.iframe-transport
 //= require blueimp-file-upload/jquery.fileupload
