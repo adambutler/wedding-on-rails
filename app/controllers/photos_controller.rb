@@ -10,15 +10,22 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    @photo.save
-    redirect_to [@event, @photo]
+    photo_urls = []
+    photos = params[:photo][:file]
+    photos.each do |photo|
+      @photo = Photo.new
+      @photo.file = photo
+      @photo.event_id = @event.id
+      @photo.save
+      photo_urls << @photo.file_url
+    end
+    render json: photo_urls
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:file, :file_url)
+    params.require(:photo).permit(:file)
   end
 
   def set_event

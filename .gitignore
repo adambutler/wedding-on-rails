@@ -18,3 +18,5 @@
 .env
 app/assets/images/tmp
 public/uploads
+
+config/initializers/carrierwave.rb

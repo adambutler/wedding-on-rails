@@ -3,10 +3,15 @@ Rails.application.routes.draw do
 
   resources :events, path: '' do
     get "admin" => "admin#dashboard"
-    resources :photos
+
+    resources :photos do
+      get 'multiple', on: :collection
+    end
+
     resources :guests do
       get 'rsvp'
     end
+
     resources :groups do
       put 'rsvp', on: :collection
     end
