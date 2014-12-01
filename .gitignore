@@ -17,3 +17,4 @@
 
 .env
 app/assets/images/tmp
+public/uploads
