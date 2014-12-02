@@ -90,8 +90,7 @@
 
 .js-justified__container
   .js-justified
-    - @event.photos.each do |photo|
-      = link_to image_tag(photo.file_url), photo.file_url
+    = render partial: "photos/index"
 
 #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
   %h2.text--salmon Drop images to upload
