@@ -21,6 +21,7 @@
 @import "foundation_and_overrides";
 
 @import "core/variables";
+@import "core/helpers";
 
 @font-face {
   font-family: "learning_curve_proregular";
@@ -92,4 +93,20 @@
 
 .js-justified__container {
   margin: 0 10px;
+}
+
+.js-dropzone-hover {
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(#000, 0.8);
+  }
+  #modalDropImages {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: 3424px !important;
+  }
 }

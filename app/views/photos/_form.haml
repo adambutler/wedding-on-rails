@@ -1,6 +1,9 @@
 = simple_form_for [@event, Photo.new], html: { multipart: true } do |f|
-  = f.file_field :file, multiple: true, class: "js-uploader", data: { url: event_photos_path(@event, @photo) }
-  = f.button :submit
+  .visually--hidden
+    = f.file_field :file, multiple: true, class: "js-uploader", data: { url: event_photos_path(@event, @photo) }
+  %label{:for => "new_photo"}
+    %button.button.button--light Add files
+  = f.button :submit, class: "js-hide"
 
 .progress
   %span.meter
