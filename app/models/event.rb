@@ -11,4 +11,7 @@ class Event < ActiveRecord::Base
     date.strftime("%A #{date.day.ordinalize} %B %Y")
   end
 
+  def in_past?
+    date < Time.now
+  end
 end
