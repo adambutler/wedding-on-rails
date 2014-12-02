@@ -1,5 +1,10 @@
 class PhotoUploader < CarrierWave::Uploader::Base
-  storage :fog
+
+  if Rails.env.development?
+    storage :file
+  else
+    storage :fog
+  end
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
