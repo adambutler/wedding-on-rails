@@ -6,6 +6,8 @@ class AdminController < ApplicationController
     @event = Event.first
     @guests = Guest.all
     @groups = Group.all
+
+    @section = Section.new
   end
 
   private

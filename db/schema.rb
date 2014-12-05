@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20141205192514) do
 
   create_table "sections", force: true do |t|
     t.string   "title"
-    t.text     "copy"
+    t.text     "content"
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"

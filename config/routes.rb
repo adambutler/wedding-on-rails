@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events, except: [:index], path: '' do
     get "admin" => "admin#dashboard"
 
+    resources :sections
     resources :photos do
       get 'multiple', on: :collection
     end

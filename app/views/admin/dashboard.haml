@@ -21,7 +21,26 @@
     You havn't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
 - else
 
+  %hr Settings
   = render partial: "events/form"
+
+  %hr Sections
+
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Actions
+    %tbody
+      - @event.sections.each do |section|
+        %tr
+          %td= section.title
+          %td
+            = link_to "edit", edit_event_section_path(@event, section)
+            = link_to "delete", event_section_path(@event, section), data: { confirm: "Are you sure you want to delete this section?" }, method: :delete
+
+
+  = render partial: "sections/form"
 
   %h2
     Guests
