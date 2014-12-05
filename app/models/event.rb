@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   has_many :groups
   has_many :guests
   has_many :photos
-  has_many :section
+  has_many :sections
 
   def days_to_go
     (date.to_time - Time.now).to_i / 1.day
