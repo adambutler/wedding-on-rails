@@ -45,7 +45,7 @@ class GuestsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find params[:event_id]
+    @event = Event.find params[:event_id] || default_event
   end
 
   def set_guest
