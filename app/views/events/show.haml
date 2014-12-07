@@ -69,10 +69,11 @@
   %br
 
 - @event.sections.each do |section|
-  .row
-    .column.small-12.medium-8.medium-offset-2
-      %h5= section.title
-      = section.content
+  %section
+    .row
+      .column.small-12.medium-8.medium-offset-2
+        %h5= section.title
+        = section.content
 
 .row
   .column.small-12.medium-8.medium-offset-2
