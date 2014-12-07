@@ -1,8 +1,8 @@
 class SectionsController < ApplicationController
 
-  before_filter :set_event, only: [:index, :show, :new, :edit, :create]
-  before_filter :set_guest, only: [:show, :update, :edit]
-  before_filter :set_guests, only: [:index]
+  before_filter :set_event, only: [:index, :show, :new, :edit, :create, :destroy]
+  before_filter :set_section, only: [:show, :update, :edit, :destroy]
+  before_filter :set_set_section, only: [:index]
 
   def index
   end
@@ -29,6 +29,11 @@ class SectionsController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    @section.destroy
+    redirect_to :back
+  end
+
   private
 
   def section_params
@@ -39,12 +44,12 @@ class SectionsController < ApplicationController
     @event = Event.find params[:event_id] || default_event
   end
 
-  def set_guest
-    guest_id = params[:guest_id] || params[:id]
-    @section = @event.guests.find guest_id
+  def set_section
+    section_id = params[:section_id] || params[:id]
+    @section = @event.sections.find section_id
   end
 
-  def set_guests
-    @sections = @event.guests.all
+  def set_sections
+    @sections = @event.sections.all
   end
 end
