@@ -5,8 +5,8 @@ class EventsController < ApplicationController
 
   def show
     @group = Group.new
-    @primary_venue_photo = VenuePhoto.find(@event.primary_venue_photo).file_url
-    @venue_photos = VenuePhoto.where.not(id: @event.primary_venue_photo)
+    @primary_venue_photo = VenuePhoto.find(@event.primary_venue_photo).file_url unless @event.primary_venue_photo.nil?
+    @venue_photos = VenuePhoto.where.not(id: @event.primary_venue_photo) || []
   end
 
   def update
