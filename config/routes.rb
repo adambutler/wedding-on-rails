@@ -5,9 +5,8 @@ Rails.application.routes.draw do
     get "admin" => "admin#dashboard"
 
     resources :sections
-    resources :photos do
-      get 'multiple', on: :collection
-    end
+
+    resources :photos
     resources :venue_photos
 
     resources :guests do
