@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :photos do
       get 'multiple', on: :collection
     end
+    resources :venue_photos
 
     resources :guests do
       get 'rsvp'
