@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :location, :active, :title)
+    params.require(:event).permit(:date, :location, :active, :title, :primary_venue_photo)
   end
 
   def set_groups

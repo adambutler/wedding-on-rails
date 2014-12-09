@@ -1,0 +1,13 @@
+%ul.small-block-grid-4
+  - @event.venue_photos.each do |venue_photo|
+    %li
+      .panel
+        = link_to image_tag(venue_photo.file_url), venue_photo.file_url
+        %br
+        %br
+        = simple_form_for @event do |f|
+          = f.input :primary_venue_photo, as: :hidden, input_html: { value: venue_photo.id }
+          - if venue_photo.primary?
+            = f.button :submit, value: "Primary", class: "button small success expand", disabled: true
+          - else
+            = f.button :submit, value: "Set as primary", class: "button small expand"
