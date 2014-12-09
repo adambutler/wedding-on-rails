@@ -10,7 +10,7 @@
     %h5 Get married on
     %h3= @event.formatted_time
 
-#location.inverted.paralax{ :style => "background-image: url('/assets/tmp/venue.jpg');" }
+#location.inverted.paralax{ :style => "background-image: url('#{@primary_venue_photo}');" }
   .row
     .column.small-12
       %br
@@ -45,11 +45,9 @@
     .column.small-12
       %h5 Venue
 
-  .row
-    %ul.small-block-grid-3
-      %li= image_tag "tmp/1.jpg"
-      %li= image_tag "tmp/2.jpg"
-      %li= image_tag "tmp/3.jpg"
+  %ul.small-block-grid-3
+    - @venue_photos.first(3).each do |venue_photo|
+      %li= image_tag venue_photo.file_url
 
   .row
     .column.small-12
