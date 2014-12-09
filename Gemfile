@@ -45,6 +45,13 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :production do
+  # Fix assets on heroku
+  # http://stackoverflow.com/questions/18826604/not-deploying-to-heroku-correctly
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
+
 gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
