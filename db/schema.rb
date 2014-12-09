@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208133248) do
+ActiveRecord::Schema.define(version: 20141209133949) do
 
   create_table "events", force: true do |t|
     t.datetime "date"
@@ -79,6 +79,13 @@ ActiveRecord::Schema.define(version: 20141208133248) do
     t.integer  "task_list_id"
     t.boolean  "completed"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venue_photos", force: true do |t|
+    t.string   "file"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
