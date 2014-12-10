@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}"))
+end
+
 event = Event.create({
   date: Date.parse("2015-06-13"),
   location: "Mansion House, Clifton, Bristol, UK",
@@ -20,6 +24,16 @@ event = Event.create({
   venue_address_zip: "BS8 3LJ",
   venue_address_country: "United Kingdom"
 })
+
+venue_photos = VenuePhoto.create([
+  { event_id: event.id, file: seed_image("venue_photos/1.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/2.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/3.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/4.jpg") }
+])
+
+event.primary_venue_photo = venue_photos.last.id
+event.save!
 
 butlers = Group.create({
   event_id: event.id
