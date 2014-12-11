@@ -5,16 +5,28 @@ body {
 h1 {
   font-family: "bebas_neueregular", sans-serif;
   font-size: 10em;
+
+  @media all and (max-width: $mobile) {
+    font-size: 3.5em;
+  }
 }
 
 h2 {
   font-family: "learning_curve_proregular", sans-serif;
   font-size: 5.5em;
+
+  @media all and (max-width: $mobile) {
+    font-size: 3em;
+  }
 }
 
 h3 {
   font-family: "learning_curve_proregular", sans-serif;
   font-size: 4em;
+
+  @media all and (max-width: $mobile) {
+    font-size: 2.2em;
+  }
 }
 
 h4 {
@@ -25,6 +37,10 @@ h4 {
 h5 {
   font-family: "bebas_neueregular", sans-serif;
   font-size: 4em;
+
+  @media all and (max-width: $mobile) {
+    font-size: 3em;
+  }
 }
 
 h6 {
@@ -35,14 +51,18 @@ h6 {
 p {
   font-family: "Book Antiqua", "Palatino", "Palatino Linotype", "Palatino LT STD", "Georgia", serif;
   font-size: 1.2em;
+
+  @media all and (max-width: $mobile) {
+    font-size: 1em;
+  }
 }
 
 .font--pacifico {
   position: relative;
   font-family: "pacificoregular", sans-serif;
   font-size: 1.2em;
-  margin: 0 -20px;
-  top: 20px;
+  margin: 0 -0.1em;
+  top: 0.12em;
   line-height: 0;
 }
 
