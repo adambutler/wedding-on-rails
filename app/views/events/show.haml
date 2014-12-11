@@ -26,11 +26,11 @@
       %br
       %br
 
-      = link_to "RSVP now", "#", class: "button large"
+      = link_to "RSVP now", "#rsvp", class: "button large js-scroll-to"
 
 %br
 
-.row
+#rsvp.row
   .column.small-12
     %h5 RSVP
     = simple_form_for rsvp_event_groups_path(@event) do |f|
