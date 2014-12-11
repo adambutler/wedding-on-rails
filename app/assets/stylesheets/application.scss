@@ -110,3 +110,17 @@
     top: 3424px !important;
   }
 }
+
+.map {
+  width: 100%;
+  height: 360px;
+}
+
+.map--overlay {
+  background: transparent;
+  position: relative;
+  width: 100%;
+  height: 360px;
+  top: 360px;
+  margin-top: -360px;
+}
