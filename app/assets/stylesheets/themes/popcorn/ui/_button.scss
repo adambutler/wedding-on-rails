@@ -12,4 +12,8 @@
 .button--light {
   background: $white;
   color: mix($mint, #333);
+  &:hover {
+    background-color: $white;
+    color: $salmon;
+  }
 }
