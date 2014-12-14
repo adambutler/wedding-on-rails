@@ -2,8 +2,13 @@
   .visually--hidden
     = f.file_field :file, multiple: true, class: "js-uploader", data: { url: event_photos_path(@event, @photo) }
   %label{:for => "photo_file"}
-    %span.button.button--light Upload your photos
+    %span.button.button--light
+      %span.icon.icon-camera
+      Upload your photos
   = f.button :submit, class: "js-hide"
 
-.progress
-  %span.meter
+.row.js-progress{ style: "display: none;"}
+  .column.small-12.medium-8.medium-centered
+    .progress.round
+      %span.meter
+    %br

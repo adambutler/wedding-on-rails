@@ -4,8 +4,9 @@ $ ->
     dropZone: $("body")
     progressall: (e, data) ->
       progress = parseInt(data.loaded / data.total * 100, 10)
+      showProgress = progress > 0 and progress < 100
+      $(".js-progress").toggle(showProgress)
       $(".meter").css "width", progress + "%"
-      console.log progress
     done: (e, data) ->
       for file in data.result
         console.log file
