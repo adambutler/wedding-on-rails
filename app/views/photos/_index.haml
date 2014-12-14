@@ -1,2 +1,8 @@
-- @event.photos.reverse.each do |photo|
-  = link_to image_tag(photo.file_url), photo.file_url
+- if @event.photos.empty?
+  %h4
+    It looks like no photos have not been uploaded yet.
+    %br
+    Come back here later too view the gallery
+- else
+  - @event.photos.reverse.each do |photo|
+    = link_to image_tag(photo.file_url), photo.file_url
