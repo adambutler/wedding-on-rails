@@ -81,7 +81,7 @@
   .column.small-12.medium-8.medium-offset-2
     %h5 Photos
 
-- if @event.in_past?
+- if !@event.in_past?
   = render partial: "photos/form"
   .js-justified__container
     .js-justified
