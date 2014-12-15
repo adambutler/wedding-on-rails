@@ -1,0 +1,12 @@
+footer {
+  @extend .card;
+  margin: 0 40px;
+  padding: 10px 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: $color-text;
+  a { color: $salmon; }
+  p {
+    margin: 0;
+  }
+}

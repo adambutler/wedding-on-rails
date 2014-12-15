@@ -52,6 +52,10 @@ p {
   font-family: "Book Antiqua", "Palatino", "Palatino Linotype", "Palatino LT STD", "Georgia", serif;
   font-size: 1.2em;
 
+  small {
+    font-size: 0.8em;
+  }
+
   @media all and (max-width: $mobile) {
     font-size: 1em;
   }

@@ -1,0 +1,5 @@
+%h2 Lists
+
+- @event.task_lists.each do |task_list|
+  - task_list.tasks.each do |task|
+    = render partial: "tasks/form", locals: { event: @event, task_list: task_list, task: task }
