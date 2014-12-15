@@ -8,9 +8,12 @@ Rails.application.routes.draw do
     get "admin" => "admin#dashboard"
 
     resources :sections
-    resources :tasks
     resources :photos
     resources :venue_photos
+
+    resources :task_lists do
+      resources :tasks
+    end
 
     resources :guests do
       get 'rsvp'
