@@ -1,7 +1,7 @@
-class TaskController < ApplicationController
+class TasksController < ApplicationController
 
-  before_filter :set_event, only: [:index, :show, :new, :edit]
-  before_filter :set_task_list, only: [:index, :show, :new, :edit]
+  before_filter :set_event, only: [:index, :show, :new, :edit, :update]
+  before_filter :set_task_list, only: [:index, :show, :new, :edit, :update]
   before_filter :set_task, only: [:show, :update, :edit]
   before_filter :set_tasks, only: [:index]
 
@@ -44,7 +44,7 @@ class TaskController < ApplicationController
   end
 
   def set_task
-    @task = @event.task.find params[:id]
+    @task = @event.tasks.find params[:id]
   end
 
   def set_tasks
