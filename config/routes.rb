@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "admin" => "admin#dashboard"
 
     resources :sections
-
+    resources :tasks
     resources :photos
     resources :venue_photos
 
