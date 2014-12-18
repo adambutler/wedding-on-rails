@@ -1,5 +1,3 @@
-console.log 'ok'
-
 $ ->
   $(".js-scroll-to").click (e) ->
     e.preventDefault()

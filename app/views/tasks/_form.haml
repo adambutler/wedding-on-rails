@@ -1,4 +1,3 @@
-= simple_form_for [event, task_list, task] do |f|
+= simple_form_for [event, task_list, task], remote: true do |f|
   = f.input :description
   = f.input :completed, label: false
-  = f.button :submit
