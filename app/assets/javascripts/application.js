@@ -22,6 +22,7 @@
 //= require blueimp-file-upload/jquery.iframe-transport
 //= require blueimp-file-upload/jquery.fileupload
 //= require nprogress
+//= require lightbox2
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
