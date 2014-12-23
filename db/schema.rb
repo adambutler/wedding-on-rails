@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209214036) do
+ActiveRecord::Schema.define(version: 20141222172404) do
 
   create_table "events", force: true do |t|
     t.datetime "date"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20141209214036) do
     t.string   "venue_address_zip"
     t.string   "venue_address_country"
     t.integer  "primary_venue_photo"
+    t.text     "venue_body"
+    t.text     "venue_directions"
   end
 
   create_table "groups", force: true do |t|

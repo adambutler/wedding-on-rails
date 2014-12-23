@@ -22,7 +22,12 @@ event = Event.create({
   venue_address_city: "Bristol",
   venue_address_state: "Bristol",
   venue_address_zip: "BS8 3LJ",
-  venue_address_country: "United Kingdom"
+  venue_address_country: "United Kingdom",
+  venue_directions: """
+    The mansion house is located in the heart of Clifton.
+
+
+  """
 })
 
 venue_photos = VenuePhoto.create([
