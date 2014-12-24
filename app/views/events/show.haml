@@ -56,16 +56,14 @@
     .column.small-12
       #venue-copy
         %h3= @event.venue_name
-        = @event.venue_body
+        = raw(@event.venue_body.from_markdown_to_html)
         %br
-        .row
-          .column.small-12.medium-7
-            .map--overlay{onclick: "style.pointerEvents='none'"}
-            :plain
-              <iframe class="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=the%20mansion%20house%2C%20bristol&key=AIzaSyBSAx1faftn9NnjVbA1BV0RWm6jDux8_g4"></iframe>
-          .column.small-12.medium-5
-            %h3 Directions
-            = @event.venue_directions
+        %h4 Directions
+        = raw(@event.venue_directions.from_markdown_to_html)
+        %br
+        .map--overlay{onclick: "style.pointerEvents='none'"}
+        :plain
+          <iframe class="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=the%20mansion%20house%2C%20bristol&key=AIzaSyBSAx1faftn9NnjVbA1BV0RWm6jDux8_g4"></iframe>
 
   %br
 
