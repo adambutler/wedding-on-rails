@@ -18,15 +18,25 @@ event = Event.create({
   partner_one: "Adam",
   partner_two: "Cerys",
   venue_name: "Mansion House",
-  venue_address_line_one: "Clifton down",
+  venue_address_line_one: "Clifton Down",
   venue_address_city: "Bristol",
   venue_address_state: "Bristol",
   venue_address_zip: "BS8 3LJ",
   venue_address_country: "United Kingdom",
+  venue_body: """
+Both the ceremony and reception will be held at The Mansion House located in the heart of Clifton.
+We're *hoping* for an outdoor ceremony in the venues beautiful gardens.
+  """,
   venue_directions: """
-    The mansion house is located in the heart of Clifton.
+**From Dorset:** Take the A350 road via Shaftesbury, Warminster and Bath *appox 2hrs 30min*.
 
+**From elsewhere:** To get directions follow the instructions on the map below.
 
+The Mansion House is located beween the Clifton suspension bridge and Bristol Zoo. **From the portway** take the
+road up to Clifton and then take the first right keeping left at the fork and continue for 150 yards. **From the
+suspension bridge** heading into Clifton take the second left and continue down Canynge Road.
+
+Mansion House Bristol, Clifton Down, Bristol, BS8 3LJ
   """
 })
 
