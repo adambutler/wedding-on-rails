@@ -119,6 +119,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    kramdown (1.4.2)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.2)
@@ -229,6 +230,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kramdown
   mysql2
   pg
   rails (= 4.1.6)

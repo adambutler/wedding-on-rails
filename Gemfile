@@ -59,6 +59,7 @@ gem "sorcery"
 gem "carrierwave"
 gem "fog"
 gem "pg"
+gem "kramdown"
 
 gem "rails-assets-datetimepicker"
 gem "rails-assets-select2"
