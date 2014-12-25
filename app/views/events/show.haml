@@ -72,7 +72,7 @@
     .row
       .column.small-12.medium-8.medium-offset-2
         %h5= section.title
-        = section.content
+        = raw(section.content.from_markdown_to_html)
 
 .row
   .column.small-12.medium-8.medium-offset-2
