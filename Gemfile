@@ -45,6 +45,10 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 group :production do
   # Fix assets on heroku
   # http://stackoverflow.com/questions/18826604/not-deploying-to-heroku-correctly
