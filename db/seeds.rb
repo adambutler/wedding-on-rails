@@ -1,17 +1,8 @@
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 def seed_image(file_name)
   File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}"))
 end
 
-event = Event.create({
+event = Event.create!({
   date: Date.parse("2015-06-13"),
   location: "Mansion House, Clifton, Bristol, UK",
   active: true,
@@ -41,7 +32,7 @@ Mansion House Bristol, Clifton Down, Bristol, BS8 3LJ
   """
 })
 
-venue_photos = VenuePhoto.create([
+venue_photos = VenuePhoto.create!([
   { event_id: event.id, file: seed_image("venue_photos/1.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/2.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/3.jpg") },
@@ -51,15 +42,15 @@ venue_photos = VenuePhoto.create([
 event.primary_venue_photo = venue_photos.last.id
 event.save!
 
-butlers = Group.create({
+butlers = Group.create!({
   event_id: event.id
 })
 
-owens = Group.create({
+owens = Group.create!({
   event_id: event.id
 })
 
-ian = Guest.create({
+ian = Guest.create!({
   name: "Ian Butler",
   rsvp: true,
   invited_to_ceremony: true,
@@ -68,7 +59,7 @@ ian = Guest.create({
   event_id: event.id
 })
 
-mary = Guest.create({
+mary = Guest.create!({
   name: "Mary Butler",
   rsvp: true,
   invited_to_ceremony: true,
@@ -77,7 +68,7 @@ mary = Guest.create({
   event_id: event.id
 })
 
-bryan = Guest.create({
+bryan = Guest.create!({
   name: "Bryan Owen",
   rsvp: true,
   invited_to_ceremony: true,
@@ -86,7 +77,7 @@ bryan = Guest.create({
   event_id: event.id
 })
 
-joyce = Guest.create({
+joyce = Guest.create!({
   name: "Joyce Owen",
   rsvp: true,
   invited_to_ceremony: true,
@@ -95,7 +86,7 @@ joyce = Guest.create({
   event_id: event.id
 })
 
-leon = Guest.create({
+leon = Guest.create!({
   name: "Leon Butler",
   rsvp: true,
   invited_to_ceremony: true,
@@ -103,7 +94,7 @@ leon = Guest.create({
   event_id: event.id
 })
 
-leons_guest = Guest.create({
+leons_guest = Guest.create!({
   rsvp: false,
   invited_to_ceremony: true,
   invited_to_evening: true,

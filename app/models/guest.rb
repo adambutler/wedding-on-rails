@@ -16,7 +16,7 @@ class Guest < ActiveRecord::Base
   private
 
   def create_guest_group
-    self.group = Group.create if self.group.nil?
+    self.group = Group.create!(event_id: self.event_id) if self.group.nil?
   end
 end
 
