@@ -17,7 +17,6 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    create_group if @guest.group.nil?
     @guest.save
   end
 
@@ -27,11 +26,6 @@ class GuestsController < ApplicationController
   def update
     @guest.update_attributes(guest_params)
     redirect_to :back
-  end
-
-  def create_group
-    @group = Group.create
-    @guest.group_id = @group.id
   end
 
   def rsvp

@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -91,5 +92,21 @@ joyce = Guest.create({
   invited_to_ceremony: true,
   invited_to_evening: true,
   group_id: owens.id,
+  event_id: event.id
+})
+
+leon = Guest.create({
+  name: "Leon Butler",
+  rsvp: true,
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  event_id: event.id
+})
+
+leons_guest = Guest.create({
+  rsvp: false,
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  group_id: leon.group.id,
   event_id: event.id
 })
