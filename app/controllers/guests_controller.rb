@@ -1,7 +1,9 @@
 class GuestsController < ApplicationController
 
-  before_filter :set_event, only: [:index, :show, :new, :edit, :rsvp]
-  before_filter :set_guest, only: [:show, :update, :edit, :rsvp]
+  before_filter :set_event
+  before_filter :set_group
+  before_filter :set_groups, only: [:index]
+  before_filter :set_guest, only: [:show, :update, :edit]
   before_filter :set_guests, only: [:index]
 
   def index
@@ -25,7 +27,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update_attributes(guest_params)
-    redirect_to :back
+    render :nothing => true, :status => 200
   end
 
   def rsvp
@@ -42,12 +44,20 @@ class GuestsController < ApplicationController
     @event = Event.find params[:event_id] || default_event
   end
 
+  def set_group
+    @group = @event.groups.find params[:group_id]
+  end
+
+  def set_groups
+    @groups = @event.groups.all
+  end
+
   def set_guest
     guest_id = params[:guest_id] || params[:id]
-    @guest = @event.guests.find guest_id
+    @guest = @group.guests.find guest_id
   end
 
   def set_guests
-    @guests = @event.guests.all
+    @guests = @group.guests.all
   end
 end

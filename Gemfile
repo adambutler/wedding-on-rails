@@ -46,7 +46,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
 
 group :production do
@@ -56,6 +56,7 @@ group :production do
   gem "rails3_serve_static_assets", github: "heroku/rails3_serve_static_assets"
 end
 
+gem "active_model_serializers"
 gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
@@ -64,6 +65,7 @@ gem "carrierwave"
 gem "fog"
 gem "pg"
 gem "kramdown"
+gem "angularjs-rails"
 
 gem "rails-assets-datetimepicker"
 gem "rails-assets-select2"
@@ -71,3 +73,5 @@ gem "rails-assets-blueimp-file-upload"
 gem "rails-assets-Justified-Gallery"
 gem "rails-assets-nprogress"
 gem "rails-assets-lightbox2"
+gem "rails-assets-lodash"
+gem "rails-assets-restangular"

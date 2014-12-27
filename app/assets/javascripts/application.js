@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lodash
+//= require angular
+//= require restangular
 //= require foundation
 //= require turbolinks
 //= require datetimepicker
@@ -23,6 +26,11 @@
 //= require blueimp-file-upload/jquery.fileupload
 //= require nprogress
 //= require lightbox2
+
+//= require_tree ./angular/modules
+//= require_tree ./angular/factories
+//= require_tree ./angular/controllers
+
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

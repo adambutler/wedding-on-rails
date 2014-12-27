@@ -42,6 +42,19 @@
 
     .row#rsvp-form
 
+    .column.small-12.medium-6{ "ng-repeat" => "guest in group" }
+      .card
+        %h3 {{ guestName(guest) }}
+        %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
+        %p {{ rsvpStatus(guest) }}
+        %span.button{ng: { hide: "guest.is_guest", click: "toggleRsvp(guest)"}} {{ rsvpButtonText(guest) }}
+        %span.button{ng: { show: "guest.is_guest", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
+
+        .reset{ng: {show: "guest.rsvp"}}
+          %label
+            %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
+            Vegetarian
+
 .box.box--mint
   .row
     .column.small-12
