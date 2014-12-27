@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get code, :to => "errors#show", :code => code
   end
 
-  resources :events, except: [:index], path: '' do
+  resources :events, except: [:index] do
     get "admin" => "admin#dashboard"
 
     resources :sections
