@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
     resources :groups do
       put 'rsvp', on: :collection
+      resources :guests
     end
   end
 
