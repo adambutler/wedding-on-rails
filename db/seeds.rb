@@ -88,7 +88,7 @@ joyce = Guest.create!({
 
 leon = Guest.create!({
   name: "Leon Butler",
-  rsvp: true,
+  rsvp: false,
   invited_to_ceremony: true,
   invited_to_evening: true,
   event_id: event.id
