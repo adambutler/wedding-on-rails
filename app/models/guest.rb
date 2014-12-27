@@ -10,13 +10,13 @@ class Guest < ActiveRecord::Base
   end
 
   def is_guest?
-    !name.nil?
+    self.name == "Guest"
   end
 
   private
 
   def create_guest_group
-    self.group = Group.create!(event_id: self.event_id) if self.group.nil?
+    self.group = Group.create!(event_id: self.event_id) if self.group_id.nil?
   end
 end
 
