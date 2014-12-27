@@ -7,6 +7,7 @@ class Guest < ActiveRecord::Base
 
   def init
     self.name ||= "Guest"
+    self.vegetarian ||= false
   end
 
   def is_guest?
