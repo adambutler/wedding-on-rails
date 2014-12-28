@@ -16,5 +16,4 @@
 /tmp
 
 .env
-app/assets/images/seed
 public/uploads
