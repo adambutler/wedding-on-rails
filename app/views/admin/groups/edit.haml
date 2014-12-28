@@ -1,0 +1,14 @@
+%h2 Edit group
+
+%table
+  %thead
+    %tr
+      %th Guest
+      %th Actions
+  %tbody
+    - @group.guests.each do |guest|
+      %tr
+        %td= guest.name
+        %td
+          = link_to "edit", edit_admin_event_guest_path(@event, guest)
+          = link_to "delete", admin_event_guest_path(@event, guest), data: { confirm: "Are you sure you want to delete #{guest.name}?" }, method: :delete

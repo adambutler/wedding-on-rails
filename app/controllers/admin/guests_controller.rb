@@ -1,4 +1,5 @@
-class GuestsController < ApplicationController
+class Admin::GuestsController < ApplicationController
+  layout "admin"
   before_filter :set_event
   before_filter :set_group, only: [:index, :show]
   before_filter :set_groups, only: [:index]
@@ -9,9 +10,30 @@ class GuestsController < ApplicationController
     render json: @guests
   end
 
+  def new
+    @guest = Guest.new
+  end
+
+  def create
+    @guest = Guest.new(guest_params)
+    @guest.save
+  end
+
+  def edit
+  end
+
   def update
     @guest.update_attributes(guest_params)
     render :nothing => true, :status => 200
+  end
+
+  def rsvp
+    render "rsvp", layout: false if params[:raw]
+  end
+
+  def destroy
+    @guest.destroy
+    redirect_to :back
   end
 
   private

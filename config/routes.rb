@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   end
 
   resources :events, except: [:index] do
-    get "admin" => "admin#dashboard"
 
-    resources :sections
+    resources :groups do
+      resources :guests
+    end
+
     resources :photos
     resources :venue_photos
 
@@ -19,6 +21,15 @@ Rails.application.routes.draw do
       put 'rsvp', on: :collection
       resources :guests
     end
+  end
+
+  namespace :admin do
+    resources :events, except: [:index] do
+      resources :sections
+      resources :guests, except: [:show]
+      resources :groups
+    end
+    root "admin#dashboard"
   end
 
   resources :photos, :only => [:index, :create, :destroy]

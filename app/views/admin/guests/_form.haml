@@ -1,6 +1,5 @@
-= simple_form_for [@event, @guest] do |f|
+= simple_form_for [:admin, @event, @guest] do |f|
   = f.input :name
-  = f.input :rsvp
   = f.input :invited_to_ceremony
   = f.input :invited_to_evening
   = f.input :vegetarian

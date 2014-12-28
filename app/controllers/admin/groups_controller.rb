@@ -1,4 +1,5 @@
-class GroupsController < ApplicationController
+class Admin::GroupsController < ApplicationController
+  layout "admin"
   before_filter :set_event, only: [:index, :show, :edit, :destroy]
   before_filter :set_group, only: [:show, :edit, :destroy]
   before_filter :set_guests, only: [:show]

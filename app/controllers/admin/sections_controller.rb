@@ -1,6 +1,6 @@
-class SectionsController < ApplicationController
-
-  before_filter :set_event, only: [:index, :show, :new, :edit, :create, :destroy]
+class Admin::SectionsController < ApplicationController
+  layout "admin"
+  before_filter :set_event, only: [:index, :update, :show, :new, :edit, :create, :destroy]
   before_filter :set_section, only: [:show, :update, :edit, :destroy]
   before_filter :set_set_section, only: [:index]
 
