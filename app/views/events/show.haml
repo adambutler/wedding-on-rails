@@ -40,20 +40,21 @@
           = f.input :guest, collection: @groups, as: :select, placeholder: "Select your name(s)"
       %br
 
-    .row#rsvp-form
+    .row
+      .column.small-12.medium-6{ "ng-repeat" => "guest in group" }
+        .card
+          %h3 {{ guestName(guest) }}
+          %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
+          %p {{ rsvpStatus(guest) }}
+          %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I can not attend
+          %span.button{ng: { hide: "guest.is_guest || guest.rsvp", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
+          %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
+          %span.button{ng: { show: "guest.is_guest", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
 
-    .column.small-12.medium-6{ "ng-repeat" => "guest in group" }
-      .card
-        %h3 {{ guestName(guest) }}
-        %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
-        %p {{ rsvpStatus(guest) }}
-        %span.button{ng: { hide: "guest.is_guest", click: "toggleRsvp(guest)"}} {{ rsvpButtonText(guest) }}
-        %span.button{ng: { show: "guest.is_guest", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
-
-        .reset{ng: {show: "guest.rsvp"}}
-          %label
-            %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
-            Vegetarian
+          .reset{ng: {show: "guest.rsvp"}}
+            %label
+              %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
+              Vegetarian
 
 .box.box--mint
   .row

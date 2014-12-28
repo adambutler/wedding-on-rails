@@ -88,7 +88,6 @@ joyce = Guest.create!({
 
 leon = Guest.create!({
   name: "Leon Butler",
-  rsvp: false,
   invited_to_ceremony: true,
   invited_to_evening: true,
   event_id: event.id
@@ -101,3 +100,60 @@ leons_guest = Guest.create!({
   group_id: leon.group.id,
   event_id: event.id
 })
+
+debug = Group.create!({
+  event_id: event.id
+})
+
+no_rsvp = Guest.create!({
+  name: "no_rsvp",
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  group_id: debug.id,
+  event_id: event.id
+})
+
+rsvp_false = Guest.create!({
+  name: "rsvp_false",
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  event_id: event.id,
+  group_id: debug.id,
+  rsvp: false
+})
+
+rsvp_true = Guest.create!({
+  name: "rsvp_true",
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  event_id: event.id,
+  group_id: debug.id,
+  rsvp: true
+})
+
+guest_no_rsvp = Guest.create!({
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  group_id: debug.id,
+  event_id: event.id
+})
+
+guest_rsvp_false = Guest.create!({
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  event_id: event.id,
+  group_id: debug.id,
+  rsvp: false
+})
+
+guest_rsvp_true = Guest.create!({
+  invited_to_ceremony: true,
+  invited_to_evening: true,
+  event_id: event.id,
+  group_id: debug.id,
+  rsvp: true
+})
+
+
+
+

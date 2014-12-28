@@ -11,9 +11,9 @@ app.controller "RsvpController", ["$scope", "Restangular", ($scope, Restangular)
 
   $scope.newGuest = {}
 
-  $scope.toggleRsvp = (guest) ->
-      guest.rsvp = !guest.rsvp
-      guest.put()
+  $scope.setRsvp = (guest, rsvp) ->
+    guest.rsvp = rsvp
+    guest.put()
 
   $scope.defineGuest = (guest) ->
     guest.name = $scope.newGuest.name
@@ -25,15 +25,15 @@ app.controller "RsvpController", ["$scope", "Restangular", ($scope, Restangular)
     guest.put()
 
   # Restangular.one('events', 1).one('groups', 3).getList("guests").then (group) ->
-  #       $scope.group = group
+  #   $scope.group = group
 
   $scope.rsvpStatus = (guest) ->
     return "Thank you for your RSVP, we look forward to seeing you :)" if guest.rsvp
     return "Feel free to add a guest to your RSVP by adding their name above." if guest.is_guest
+    return "You have RSVP that you can not attend." if guest.rsvp == false
     return "You have not yet RSVP'd."
 
   $scope.rsvpButtonText = (guest) ->
-    return "Sorry I can no longer make it" if guest.rsvp
     return "Add guest" if guest.is_guest
     return "Yes I can attend"
 

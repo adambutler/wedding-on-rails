@@ -15,10 +15,6 @@ Rails.application.routes.draw do
       resources :tasks
     end
 
-    resources :guests do
-      get 'rsvp'
-    end
-
     resources :groups do
       put 'rsvp', on: :collection
       resources :guests
