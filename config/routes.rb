@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   resources :photos, :only => [:index, :create, :destroy]
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
   root "events#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
