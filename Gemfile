@@ -59,6 +59,7 @@ group :production do
   # Include 'rails_12factor' gem to enable all platform features
   # See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
   gem "rails_12factor"
+  gem "thin", "~> 1.6.1"
 end
 
 gem "active_model_serializers"
