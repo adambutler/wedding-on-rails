@@ -21,6 +21,14 @@ class Event < ActiveRecord::Base
     date < Time.now
   end
 
+  def self.send_notifications(id)
+    find(id).send_notifications
+  end
+
+  def send_notifications
+    Rails.logger.debug "Send Notifications"
+  end
+
   private
 
   def create_event_task_list

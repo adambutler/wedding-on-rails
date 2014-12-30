@@ -11,6 +11,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update_attributes(guest_params)
+    Event.delay(queue: "notification", run_at: 30.seconds.from_now).send_notifications(@guest.event.id)
     render :nothing => true, :status => 200
   end
 
