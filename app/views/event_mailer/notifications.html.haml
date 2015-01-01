@@ -1,0 +1,11 @@
+%h1 You have #{@rsvps.count} new #{"RSVP".pluralize(@rsvps.count)}
+
+- @rsvps.each do |rsvp|
+  %p
+    %b
+      #{rsvp.guest.name}
+    RSVP'd
+    - if rsvp.guest.rsvp
+      %b{style: "color: #27ae60;"} Yes
+    - else
+      %b{style: "color: #e74c3c;"} No

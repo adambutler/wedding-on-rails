@@ -27,7 +27,12 @@ class Event < ActiveRecord::Base
   end
 
   def send_notifications
-    Rails.logger.debug "Send Notifications"
+    rsvps = Event.first.event_notifications.where(notification_type: "rsvp")
+    unless rsvps.empty?
+      if EventMailer.notifications(rsvps).deliver
+        rsvps.destroy_all
+      end
+    end
   end
 
   private
