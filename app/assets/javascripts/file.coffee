@@ -8,8 +8,8 @@ $ ->
 
     done: (e, data) ->
       for file in data.result
-        console.log file
-        $("<a src='#{file}'>").html($("<img/>").attr("src", file)).prependTo(".js-justified")
+        $(".js-justified").children().not("a").remove()
+        $("<a href='#{file}' data-lightbox='event'>").html($("<img/>").attr("src", file)).prependTo(".js-justified")
         $(".js-justified").justifiedGallery
           rowHeight: 250
           margins: 10
