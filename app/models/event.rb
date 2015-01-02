@@ -28,9 +28,11 @@ class Event < ActiveRecord::Base
 
   def send_notifications
     rsvps = Event.first.event_notifications.where(notification_type: "rsvp")
-    unless rsvps.empty?
-      if EventMailer.notifications(rsvps).deliver
+    photos = Event.first.event_notifications.where(notification_type: "photo_upload")
+    unless rsvps.empty? and photos.empty?
+      if EventMailer.notifications(rsvps, photos).deliver
         rsvps.destroy_all
+        photos.destroy_all
       end
     end
   end

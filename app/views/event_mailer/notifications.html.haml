@@ -1,11 +1,22 @@
-%h1 You have #{@rsvps.count} new #{"RSVP".pluralize(@rsvps.count)}
+- unless @rsvps.empty?
+  %h1 You have #{@rsvps.count} new #{"RSVP".pluralize(@rsvps.count)}
 
-- @rsvps.each do |rsvp|
-  %p
-    %b
-      #{rsvp.guest.name}
-    RSVP'd
-    - if rsvp.guest.rsvp
-      %b{style: "color: #27ae60;"} Yes
-    - else
-      %b{style: "color: #e74c3c;"} No
+  - @rsvps.each do |rsvp|
+    %p
+      %b
+        #{rsvp.guest.name}
+      RSVP'd
+      - if rsvp.guest.rsvp
+        %b{style: "color: #27ae60;"} Yes
+      - else
+        %b{style: "color: #e74c3c;"} No
+
+- unless @photos.empty?
+  %h1 #{@photos.count} new #{"Photo".pluralize(@photos.count)} have been uploaded
+
+  %table#templateBody{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+    - @photos.each_slice(3) do |slice|
+      %tr
+      - slice.each do |photo|
+        %td.galleryItem{:valign => "top"}
+          = link_to image_tag(photo.photo.file_url, width: 230), photo.photo.file_url

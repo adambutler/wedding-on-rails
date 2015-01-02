@@ -17,8 +17,12 @@ class PhotosController < ApplicationController
       @photo.file = photo
       @photo.event_id = @event.id
       @photo.save
+      EventNotification.find_or_create_by({notification_type: "photo_upload", event_id: @event.id, photo_id: @photo.id})
       photo_urls << @photo.file_url
     end
+
+    Event.delay(queue: "notification", run_at: 30.seconds.from_now).send_notifications(@event.id)
+
     render json: photo_urls
   end
 
