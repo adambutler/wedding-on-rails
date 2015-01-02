@@ -2,11 +2,16 @@ $ ->
   $(".js-uploader").fileupload
     dataType: "json"
     dropZone: $("body")
+    start: ->
+      $(".js-upload-progress").show()
+
     progressall: (e, data) ->
       progress = data.loaded / data.total
       NProgress.set(progress)
+      $(".js-upload-progress span").html(Math.ceil(progress))
 
     done: (e, data) ->
+      $(".js-upload-progress").hide()
       for file in data.result
         $(".js-justified").children().not("a").remove()
         $("<a href='#{file}' data-lightbox='event'>").html($("<img/>").attr("src", file)).prependTo(".js-justified")

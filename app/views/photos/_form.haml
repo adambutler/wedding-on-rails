@@ -5,4 +5,9 @@
     %span.button.button--light
       %span.icon.icon-camera
       Upload your photos
+  %p.js-upload-progress{style: "display: none;"}
+    Uploading
+    %span 0
+    %small &#37;
+    complete
   = f.button :submit, class: "js-hide"
