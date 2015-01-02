@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   after_create :create_event_task_list
 
   def days_to_go
-    (date.to_time - Time.now).to_i / 1.day
+    (Event.last.date - Date.today).to_int.clamp(0, Float::INFINITY)
   end
 
   def formatted_time
@@ -19,7 +19,11 @@ class Event < ActiveRecord::Base
   end
 
   def in_past?
-    date < Time.now
+    date < Date.today
+  end
+
+  def is_today?
+    date == Date.today
   end
 
   def self.send_notifications(id)

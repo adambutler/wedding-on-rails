@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
   end
 
   create_table "events", force: true do |t|
-    t.datetime "date"
+    t.date     "date"
     t.string   "location"
     t.boolean  "active"
     t.string   "title"
