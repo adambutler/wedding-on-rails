@@ -9,13 +9,16 @@ app.controller "RsvpController", ["$scope", "Restangular", ($scope, Restangular)
       Restangular.one('events', 1).one('groups', e.val).getList("guests").then (group) ->
         $scope.group = group
 
-  $scope.newGuest = {}
+  $scope.newGuest = {
+    name: ""
+  }
 
   $scope.setRsvp = (guest, rsvp) ->
     guest.rsvp = rsvp
     guest.put()
 
   $scope.defineGuest = (guest) ->
+    return if $scope.newGuest.name == ""
     guest.name = $scope.newGuest.name
     guest.is_guest = false
     guest.rsvp = true

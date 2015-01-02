@@ -49,7 +49,7 @@
           %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I can not attend
           %span.button{ng: { hide: "guest.is_guest || guest.rsvp", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
           %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
-          %span.button{ng: { show: "guest.is_guest", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
+          %span.button{ng: { show: "guest.is_guest", disabled: "newGuest.name == ''", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
 
           .reset{ng: {show: "guest.rsvp"}}
             %label
