@@ -19,4 +19,4 @@
       %tr
       - slice.each do |photo|
         %td.galleryItem{:valign => "top"}
-          = link_to image_tag(photo.photo.file_url, width: 230), photo.photo.file_url
+          = link_to image_tag(photo.photo.file.small.url, width: 230), photo.photo.file_url
