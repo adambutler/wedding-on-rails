@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def default_serializer_options
     {root: false}
   end
+
+  def notification_delay
+    5.minutes.from_now
+  end
 end

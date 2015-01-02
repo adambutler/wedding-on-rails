@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
       photo_urls << @photo.file_url
     end
 
-    Event.delay(queue: "notification", run_at: 30.seconds.from_now).send_notifications(@event.id)
+    Event.delay(queue: "notification", run_at: notification_delay).send_notifications(@event.id)
 
     render json: photo_urls
   end

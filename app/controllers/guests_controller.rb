@@ -12,7 +12,7 @@ class GuestsController < ApplicationController
   def update
     @guest.update_attributes(guest_params)
     EventNotification.find_or_create_by({notification_type: "rsvp", event_id: @guest.event.id, guest_id: @guest.id})
-    Event.delay(queue: "notification", run_at: 30.seconds.from_now).send_notifications(@guest.event.id)
+    Event.delay(queue: "notification", run_at: notification_delay).send_notifications(@guest.event.id)
     render :nothing => true, :status => 200
   end
 
