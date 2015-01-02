@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
       @photo.event_id = @event.id
       @photo.save
       EventNotification.find_or_create_by({notification_type: "photo_upload", event_id: @event.id, photo_id: @photo.id})
-      photo_urls << @photo.file_url
+      photo_urls << { small: @photo.file.small.url, large: @photo.file.large.url }
     end
 
     Event.delay(queue: "notification", run_at: notification_delay).send_notifications(@event.id)
