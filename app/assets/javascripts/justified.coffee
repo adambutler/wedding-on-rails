@@ -1,4 +1,4 @@
 $ ->
   $(".js-justified").justifiedGallery
-    rowHeight: 250
+    rowHeight: 200
     margins: 10
