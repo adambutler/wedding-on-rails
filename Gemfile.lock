@@ -178,7 +178,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.6)
       sprockets-rails (~> 2.0)
-    rails-assets-Justified-Gallery (3.4.0)
+    rails-assets-Justified-Gallery (3.5.0)
     rails-assets-angular (1.3.8)
     rails-assets-blueimp-canvas-to-blob (2.1.1)
     rails-assets-blueimp-file-upload (9.8.0)
