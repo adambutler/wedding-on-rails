@@ -77,7 +77,105 @@
         %br
         .map--overlay{onclick: "style.pointerEvents='none'"}
         :plain
-          <iframe class="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=the%20mansion%20house%2C%20bristol&key=AIzaSyBSAx1faftn9NnjVbA1BV0RWm6jDux8_g4"></iframe>
+          <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+          <div class="map wpgmappity_container" id="wpgmappitymap"></div>
+          <script type="text/javascript">
+          (function(){
+          function wpgmappity_maps_loaded() {
+          var latlng = new google.maps.LatLng(51.456370, -2.606592);
+          var options = {
+           center : latlng,
+           mapTypeId: google.maps.MapTypeId.ROADMAP,
+           zoomControl : true,
+           zoomControlOptions :
+           {
+           style: google.maps.ZoomControlStyle.SMALL,
+           position: google.maps.ControlPosition.TOP_LEFT
+           },
+           mapTypeControl : false,
+           scaleControl : false,
+           streetViewControl : false,
+           panControl : false, zoom : 14
+          };
+          var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
+          var point0 = new google.maps.LatLng(51.4606887,-2.6247733000000153);
+          var marker0= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
+           position : point0,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker0,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3 class="font-book-antiqua">The Mansion House</h3>'});
+           infowindow.open(wpgmappitymap,marker0);
+           });
+          var point1 = new google.maps.LatLng(51.4527825,-2.62524099999996);
+          var marker1= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+           position : point1,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker1,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3 class="font-book-antiqua">The Bristol Hotel</h3><a target=\"_blank\" href=\"http://www.doylecollection.com/hotels/the-bristol-hotel\">Go to website</a>'});
+           infowindow.open(wpgmappitymap,marker1);
+           });
+          var point2 = new google.maps.LatLng(51.4488666,-2.587721999999985);
+          var marker2= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+           position : point2,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker2,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3 class="font-book-antiqua">DoubleTree</h3><a target=\"_blank\" href=\"http://doubletree3.hilton.com/en/index.html\">Go to website</a>'});
+           infowindow.open(wpgmappitymap,marker2);
+           });
+          var point3 = new google.maps.LatLng(51.4559676,-2.5847842000000583);
+          var marker3= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+           position : point3,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker3,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3 class="font-book-antiqua">Bristol Marriott</h3><a target=\"_blank\" href=\"http://www.marriott.com/hotels/travel/brsdt-bristol-marriott-hotel-city-centre/\">Go to website</a>'});
+           infowindow.open(wpgmappitymap,marker3);
+           });
+          var point4 = new google.maps.LatLng(51.4522431,-2.59696770000005);
+          var marker4= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+           position : point4,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker4,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3 class="font-book-antiqua">Radisson Blu</h3><a target=\"_blank\" href=\"http://www.radissonblu.co.uk/hotel-bristol\">Go to website</a>'});
+           infowindow.open(wpgmappitymap,marker4);
+           });
+          var point5 = new google.maps.LatLng(51.4597989,-2.586416399999962);
+          var marker5= new google.maps.Marker({
+           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+           position : point5,
+           map : wpgmappitymap
+           });
+          google.maps.event.addListener(marker5,'click',
+           function() {
+           var infowindow = new google.maps.InfoWindow(
+           {content: '<h3>Holiday Inn</h3><a target=\"_blank\" href=\"http://www.ihg.com/holidayinn/hotels/gb/en/bristol/brscc/hoteldetail\">Go to website</a>'});
+           infowindow.open(wpgmappitymap,marker5);
+           });
+          }
+          window.onload = function() {
+           wpgmappity_maps_loaded();
+          };
+          })()
+          </script>
 
   %br
 
@@ -87,6 +185,12 @@
       .column.small-12.medium-8.medium-offset-2
         %h5= section.title
         = raw(section.content.from_markdown_to_html)
+
+%br
+
+.row.overflow
+  .small-12.column
+    .card
 
 .row
   .column.small-12.medium-8.medium-offset-2

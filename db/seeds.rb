@@ -22,7 +22,7 @@ We're *hoping* for an outdoor ceremony in the venues beautiful gardens.
   venue_directions: """
 **From Dorset:** Take the A350 road via Shaftesbury, Warminster and Bath *appox 2hrs 30min*.
 
-**From elsewhere:** To get directions follow the instructions on the map below.
+**From elsewhere:** To get directions [click here](https://www.google.co.uk/maps/dir//Mansion+House+Bristol,+Clifton+Down,+Avon,+Bristol+BS8+3LJ/@51.461078,-2.6274359,17z).
 
 The Mansion House is located beween the Clifton suspension bridge and Bristol Zoo. **From the portway** take the
 road up to Clifton and then take the first right keeping left at the fork and continue for 150 yards. **From the
