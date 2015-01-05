@@ -26,6 +26,12 @@ class Event < ActiveRecord::Base
     date == Date.today
   end
 
+  def show_photos?
+    return true if Rails.env == "development"
+    return true if in_past?
+    return true if is_today?
+  end
+
   def self.send_notifications(id)
     find(id).send_notifications
   end

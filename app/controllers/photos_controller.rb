@@ -1,6 +1,12 @@
 class PhotosController < ApplicationController
   before_filter :set_event, only: [:index, :show, :new, :create]
   before_filter :set_photo, only: [:show]
+  before_filter :set_photos, only: [:index]
+
+  def index
+    page = params[:page] || 0
+    render json: @photos.page(page)
+  end
 
   def show
   end
@@ -38,5 +44,9 @@ class PhotosController < ApplicationController
 
   def set_photo
     @photo = Photo.find params[:id]
+  end
+
+  def set_photos
+    @photos = @event.photos
   end
 end

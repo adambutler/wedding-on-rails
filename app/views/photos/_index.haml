@@ -1,8 +1,11 @@
-- if @event.photos.empty?
-  %h4
-    It looks like no photos have not been uploaded yet.
-    %br
-    Come back here later to view the gallery
-- else
-  - @event.photos.reverse.each do |photo|
-    = link_to image_tag(photo.file.small.url), photo.file_url, data: { lightbox: "event" }
+%div{ng: { controller: "PhotoController" }}
+  .js-justified__container
+    .js-justified
+      - if @event.photos.empty?
+        %h4
+          It looks like no photos have not been uploaded yet.
+          %br
+          Come back here later to view the gallery
+
+      %a{href: "{{ photo.large }}", ng: { repeat: "photo in photos"}, data: { lightbox: "event" }}
+        %img{ng: {src: "{{ photo.small }}"}}

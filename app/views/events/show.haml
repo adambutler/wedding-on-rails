@@ -30,7 +30,7 @@
 
 %br
 
-#rsvp.row
+#rsvp.row{ng: { controller: "RsvpController" }}
   .column.small-12
     %h5 RSVP
     = simple_form_for rsvp_event_groups_path(@event) do |f|
@@ -192,11 +192,9 @@
   .column.small-12.medium-8.medium-offset-2
     %h5 Photos
 
-- if !@event.in_past?
+- if @event.show_photos?
   = render partial: "photos/form"
-  .js-justified__container
-    .js-justified
-      = render partial: "photos/index"
+  = render partial: "photos/index"
   #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
     %h2.text--salmon Drop images to upload
 - else

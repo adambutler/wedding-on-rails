@@ -76,6 +76,7 @@ gem "kramdown"
 gem "angularjs-rails"
 gem "delayed_job_active_record"
 gem "delayed_job_web"
+gem "kaminari"
 
 gem "rails-assets-datetimepicker"
 gem "rails-assets-select2"

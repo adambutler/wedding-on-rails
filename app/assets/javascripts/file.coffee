@@ -19,7 +19,7 @@ $ ->
         $(".js-justified").children().not("a").remove()
         $("<a href='#{file.large}' data-lightbox='event'>").html($("<img/>").attr("src", file.small)).prependTo(".js-justified")
         $(".js-justified").justifiedGallery
-          rowHeight: 250
+          rowHeight: 200
           margins: 10
 
   $(document).bind "dragover", (e) ->
