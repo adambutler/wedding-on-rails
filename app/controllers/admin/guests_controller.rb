@@ -16,7 +16,9 @@ class Admin::GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    @guest.save
+    @guest.event = @event
+    @guest.save!
+    redirect_to :back
   end
 
   def edit
