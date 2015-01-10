@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: wedding_development
+  database: hitched_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: wedding_test
+  database: hitched_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: wedding_production
-  username: wedding
-  password: <%= ENV['WEDDING_DATABASE_PASSWORD'] %>
+  database: hitched_production
+  username: hitched
+  password: <%= ENV['HITCHED_DATABASE_PASSWORD'] %>
