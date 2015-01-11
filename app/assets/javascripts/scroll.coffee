@@ -1,0 +1,2 @@
+$ ->
+  skrollr.init()

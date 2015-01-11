@@ -26,6 +26,7 @@
 //= require blueimp-file-upload/jquery.fileupload
 //= require nprogress
 //= require lightbox2
+//= require skrollr
 
 //= require_tree ./angular/modules
 //= require_tree ./angular/controllers

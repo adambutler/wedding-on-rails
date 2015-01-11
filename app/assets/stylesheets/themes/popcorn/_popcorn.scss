@@ -32,7 +32,37 @@
   background: asset-url("themes/popcorn/stripes.png");
 }
 
+#ballons {
+  position: relative;
+}
+
+#balloon01 {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 1% * floor(100 * (67.96/551.39));
+  background-image: asset-url("themes/popcorn/balloon_01.svg");
+  background-size: 100%;
+}
+
+#balloon02 {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 1% * floor(100 * (67.96/551.39));
+  background-image: asset-url("themes/popcorn/balloon_02.svg");
+  background-size: 100%;
+}
+
+#balloon03 {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 1% * floor(100 * (67.96/551.39));
+  background-image: asset-url("themes/popcorn/balloon_03.svg");
+  background-size: 100%;
+}
+
 #bridge {
+  position: relative;
+  margin-top: 50px;
   padding-bottom: 1% * floor(100 * (161.46/551.39));
   background-image: asset-url("themes/popcorn/bridge.svg");
   background-size: 100%;

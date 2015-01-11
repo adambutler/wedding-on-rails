@@ -202,6 +202,7 @@ GEM
       rails-assets-lodash (>= 1.3.0, < 2.5.0)
     rails-assets-select2 (3.5.2)
       rails-assets-jquery (>= 1.7.1)
+    rails-assets-skrollr (0.6.29)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -309,6 +310,7 @@ DEPENDENCIES
   rails-assets-nprogress
   rails-assets-restangular
   rails-assets-select2
+  rails-assets-skrollr
   rails3_serve_static_assets!
   rails_12factor
   rails_log_stdout!
