@@ -31,3 +31,9 @@
   background: $mint;
   background: asset-url("themes/popcorn/stripes.png");
 }
+
+#bridge {
+  padding-bottom: 1% * floor(100 * (161.46/551.39));
+  background-image: asset-url("themes/popcorn/bridge.svg");
+  background-size: 100%;
+}
