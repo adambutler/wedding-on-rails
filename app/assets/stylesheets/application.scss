@@ -148,3 +148,18 @@
 .caption {
   display: none !important;
 }
+
+@keyframes blood-cycle {
+  0% {background-position: 0 0; }
+  100% {background-position: 0 -6500px; } /* Must be full height of sprite or skipping will happen.*/
+}
+
+@-webkit-keyframes blood-cycle {
+  0% {background-position: 0 0; }
+  100% {background-position: 0 -6500px; } /* Must be full height of sprite or skipping will happen.*/
+}
+
+@-webkit-keyframes jump {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(400px) scale(1.2); } /* Must be full height of sprite or skipping will happen.*/
+}
