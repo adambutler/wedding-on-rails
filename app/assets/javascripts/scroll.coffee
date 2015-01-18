@@ -1,2 +1,0 @@
-$ ->
-  skrollr.init({forceHeight: false})
