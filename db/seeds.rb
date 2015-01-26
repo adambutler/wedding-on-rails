@@ -24,7 +24,7 @@ We're *hoping* for an outdoor ceremony in the venues beautiful gardens.
 
 **From elsewhere:** To get directions [click here](https://www.google.co.uk/maps/dir//Mansion+House+Bristol,+Clifton+Down,+Avon,+Bristol+BS8+3LJ/@51.461078,-2.6274359,17z).
 
-The Mansion House is located beween the Clifton suspension bridge and Bristol Zoo. **From the portway** take the
+The Mansion House is located between the Clifton suspension bridge and Bristol Zoo. **From the portway** take the
 road up to Clifton and then take the first right keeping left at the fork and continue for 150 yards. **From the
 suspension bridge** heading into Clifton take the second left and continue down Canynge Road.
 
