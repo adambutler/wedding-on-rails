@@ -71,6 +71,14 @@
   font-style: normal;
 }
 
+.text--success {
+  color: $green;
+}
+
+.text--error {
+  color: $red;
+}
+
 #location {
   position: relative;
   background-size: cover;

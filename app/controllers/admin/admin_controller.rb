@@ -4,8 +4,8 @@ class Admin::AdminController < ApplicationController
 
   def dashboard
     @event = Event.first
-    @guests = Guest.all
-    @groups = Group.all
+    @guests = GuestDecorator.all
+    @groups = Group.all.decorate
 
     @section = Section.new
   end
