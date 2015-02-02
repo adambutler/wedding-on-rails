@@ -18,6 +18,18 @@ class Guest < ActiveRecord::Base
     self.name == "Guest"
   end
 
+  def self.attending
+    where({rsvp: true})
+  end
+
+  def self.not_attending
+    where({rsvp: false})
+  end
+
+  def self.attendance_unknown
+    where({rsvp: nil})
+  end
+
   private
 
   def create_guest_group

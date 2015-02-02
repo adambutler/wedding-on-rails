@@ -5,6 +5,17 @@
     .panel.text-center
       %h2= @guests.count
       %p= "Guests".pluralize(@guests.count)
+      %small
+        %span.text--success
+          = Guest.attending.count
+          Yes
+        |
+        %span.text--error
+          = Guest.not_attending.count
+          No
+        |
+        = Guest.attendance_unknown.count
+        Not RSVPd
   %li
     .panel.text-center
       %h2= @groups.count
