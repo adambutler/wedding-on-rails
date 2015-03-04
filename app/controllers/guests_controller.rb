@@ -27,7 +27,7 @@ class GuestsController < ApplicationController
   end
 
   def set_group
-    @group = @event.groups.find params[:group_id]
+    @group = @event.groups.find params[:group_id] if params[:group_id]
   end
 
   def set_groups
@@ -40,6 +40,10 @@ class GuestsController < ApplicationController
   end
 
   def set_guests
-    @guests = @group.guests.all
+    if @group
+      @guests = @group.guests.all
+    else
+      @guests = @event.guests.all
+    end
   end
 end
