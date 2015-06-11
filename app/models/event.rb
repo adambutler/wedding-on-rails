@@ -18,6 +18,13 @@ class Event < ActiveRecord::Base
     date.strftime("%A #{date.day.ordinalize} %B %Y")
   end
 
+  def show_rsvp?
+    return true if Rails.env == "development"
+    return false if in_past?
+    return false if is_today?
+    return true
+  end
+
   def in_past?
     date < Date.today
   end
@@ -31,6 +38,7 @@ class Event < ActiveRecord::Base
     return true if Rails.env == "development"
     return true if in_past?
     return true if is_today?
+    return false
   end
 
   def self.send_notifications(id)
