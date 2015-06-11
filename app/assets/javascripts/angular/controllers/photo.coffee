@@ -4,7 +4,7 @@ app.controller "PhotoController", ["$scope", "$timeout", "Restangular", ($scope,
 
   $scope.page = 1
   $scope.rendered = false
-  $scope.blockScroll = false
+  $scope.blockScroll = true
   $scope.photos = []
   $scope.allPhotosLoaded = false
 
