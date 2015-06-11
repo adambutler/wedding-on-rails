@@ -26,7 +26,8 @@ class Event < ActiveRecord::Base
     date == Date.today
   end
 
-  def show_photos?
+  def show_photos?(params)
+    return true if params[:development]
     return true if Rails.env == "development"
     return true if in_past?
     return true if is_today?

@@ -200,7 +200,7 @@
   .column.small-12.medium-8.medium-offset-2
     %h5 Photos
 
-- if @event.show_photos?
+- if @event.show_photos?(params)
   = render partial: "photos/form"
   = render partial: "photos/index"
   #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
