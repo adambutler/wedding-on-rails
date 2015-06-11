@@ -27,6 +27,7 @@ class Event < ActiveRecord::Base
   end
 
   def show_photos?
+    return true if params[:development]
     return true if Rails.env == "development"
     return true if in_past?
     return true if is_today?
